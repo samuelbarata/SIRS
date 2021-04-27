@@ -8,17 +8,16 @@ Segurança Informática em Redes e Sistemas 2020-2021, segundo semestre
 
 *(limite: 1500 palavras)*
 
-*(preencher linha abaixo com o número de grupo, por exemplo, 7 ou 22)*  
-**Grupo N**
+**Grupo 2**
 
 *(usar imagens com 150px de altura; com o **rosto enquadrado**)*  
-![Alice](11111-alice.png) ![Bob](22222-bob.png) ![Charlie](33333-charlie.png)
+![Samuel Barata][SamuelPhoto] ![Bob](22222-bob.png) ![Charlie](33333-charlie.png)
 
 *(preencher a tabela abaixo com dados da equipa)*  
 
 | Número | Nome              | Correio eletrónico                  |
 | -------|-------------------|-------------------------------------|
-| 11111  | Alice Cyber       | <mailto:alice@tecnico.ulisboa.pt>   |
+| 94230  | Samuel Barata     | [samuel.barata@tecnico.ulisboa.pt](samuel.barata@tecnico.ulisboa.pt)   |
 | 22222  | Bob Security      | <mailto:bob@tecnico.ulisboa.pt>     |
 | 33333  | Charlie Rules     | <mailto:charlie@tecnico.ulisboa.pt> |
 
@@ -56,3 +55,5 @@ Segurança Informática em Redes e Sistemas 2020-2021, segundo semestre
 *(pontos fortes, pontos a melhorar)*
 
 *(sugestões para melhorar o projeto em edições futuras)*
+
+[SamuelPhoto]: https://fenix.tecnico.ulisboa.pt/user/photo/ist194230 

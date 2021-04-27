@@ -1,6 +1,6 @@
 # Lista de verificação (*Checklist*)
 
-**Grupo N**
+**Grupo 2**
 
 ## Rede
 
