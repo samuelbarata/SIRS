@@ -1,0 +1,2 @@
+a2enmod ssl
+/etc/init.d/apache2 start
