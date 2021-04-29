@@ -1,5 +1,5 @@
 $TTL   60000
-@           IN      SOA     dns.pt.    root.dns.pt. (
+@               IN      SOA     dns.acdc.pt.    root.dns.acdc.pt. (
                         2021042901      ; serial
                         28800           ; refresh
                         14400           ; retry
@@ -7,8 +7,6 @@ $TTL   60000
                         0               ; negative cache ttl
                         )
 
-@           IN      NS  dns.pt.
-dns         IN      A   88.60.0.54
-
-acdc        IN      NS  dns.acdc.pt.
-dns.acdc    IN      A   95.92.204.53
+@           IN      NS      dns
+dns 	    IN	    A	    95.92.204.53
+www         IN      A       95.92.204.80
