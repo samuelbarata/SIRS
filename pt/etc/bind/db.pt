@@ -1,0 +1,14 @@
+$TTL   60000
+@               IN      SOA     dns.pt.    root.dns.pt. (
+                        2021042901      ; serial
+                        28800           ; refresh
+                        14400           ; retry
+                        3600000         ; expire
+                        0               ; negative cache ttl
+                        )
+
+@               IN      NS      dns.pt.
+dns 	IN	A	88.60.0.54
+
+acdc		IN 	NS	dns.acdc
+dns.acdc	IN 	A	95.92.204.53
