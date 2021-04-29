@@ -10,11 +10,11 @@ iface lo inet loopback
 #iface eth0 inet dhcp
 
 
+iface eth0 inet static
+        address 169.254.2.2
+        netmask 255.255.255.252
+
 iface tun0 inet static
         address 95.92.202.2
         netmask 255.255.255.0
         up ip route add 95.92.192.0/20 via 95.92.202.1
-
-iface eth0 inet static
-        address 169.254.2.2
-        netmask 255.255.255.252
