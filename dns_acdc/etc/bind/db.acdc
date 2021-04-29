@@ -11,3 +11,4 @@ $TTL   60000
 dns 	    IN	    A	    95.92.204.53
 www         IN      A       95.92.204.80
 vpn         IN      A       95.92.200.2
+historian   IN      A       95.92.204.130
