@@ -11,5 +11,6 @@ iface lo inet loopback
 
 
 iface eth0 inet static
-        address 95.92.20.100
+        address 95.92.200.100
         netmask 255.255.252.0
+        gateway 95.92.200.1
