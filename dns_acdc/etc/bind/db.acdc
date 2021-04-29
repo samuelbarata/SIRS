@@ -10,3 +10,4 @@ $TTL   60000
 @           IN      NS      dns
 dns 	    IN	    A	    95.92.204.53
 www         IN      A       95.92.204.80
+vpn         IN      A       95.92.200.2
