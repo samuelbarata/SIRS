@@ -1,0 +1,28 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo eth0 eth1 eth2 eth3
+iface lo inet loopback
+
+# The primary network interface
+#allow-hotplug eth0
+#iface eth0 inet dhcp
+
+
+iface eth0 inet static
+        address 88.60.0.1
+        netmask 255.255.252.0
+
+iface eth1 inet static
+        address 169.254.0.1
+        netmask 255.255.255.252
+        up ip route add 95.92.192.0/20 via 169.254.0.2
+
+iface eth2 inet static
+        address 169.254.1.1
+        netmask 255.255.255.252
+
+iface eth3 inet static
+        address 169.254.2.1
+        netmask 255.255.255.252
