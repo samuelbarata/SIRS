@@ -1,0 +1,11 @@
+iptables -P INPUT DROP
+iptables -P OUTPUT ACCEPT
+iptables -P FORWARD DROP
+#DNS
+iptables -A FORWARD -p tcp -d 95.92.204.53 --dport 53 -j ACCEPT
+iptables -A FORWARD -p udp -d 95.92.204.53 --dport 53 -j ACCEPT
+#WWW
+iptables -A FORWARD -p tcp -d 95.92.204.80 --dport 80 -j ACCEPT
+iptables -A FORWARD -p tcp -d 95.92.204.80 --dport 443 -j ACCEPT
+#VPN
+iptables -A FORWARD -p udp -d 95.92.200.2 --dport 1194 -j ACCEPT
