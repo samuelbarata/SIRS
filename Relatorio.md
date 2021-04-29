@@ -17,7 +17,7 @@ Segurança Informática em Redes e Sistemas 2020-2021, segundo semestre
 
 | Número | Nome              | Correio eletrónico                  |
 | -------|-------------------|-------------------------------------|
-| 94230  | Samuel Barata     | [samuel.barata@tecnico.ulisboa.pt](samuel.barata@tecnico.ulisboa.pt)   |
+| 94230  | Samuel Barata     | [samuel.barata@tecnico.ulisboa.pt](mailto:samuel.barata@tecnico.ulisboa.pt)   |
 | 22222  | Bob Security      | <mailto:bob@tecnico.ulisboa.pt>     |
 | 33333  | Charlie Rules     | <mailto:charlie@tecnico.ulisboa.pt> |
 
@@ -27,9 +27,8 @@ Segurança Informática em Redes e Sistemas 2020-2021, segundo semestre
 
 ## Diagrama de rede
 
-*(usar imagem com qualidade)*
+![Diagrama](projArch.svg)
 
-*(se necessário, acrescentar algum texto explicativo)*
 
 ## Justificação de opções
 
