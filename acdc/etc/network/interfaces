@@ -18,15 +18,19 @@ iface eth0 inet static
 iface eth1 inet static
         address 95.92.200.1
         netmask 255.255.252.0
+        up ip route add 95.92.200.0/22 via 95.92.200.1
 
 iface eth2 inet static
         address 95.92.192.1
         netmask 255.255.248.0
+        up ip route add 95.92.192.0/21 via 95.92.192.1
 
 iface eth3 inet static
         address 95.92.204.129
         netmask 255.255.255.128
+        up ip route add 95.92.204.128/25 via 95.92.204.129
 
 iface eth4 inet static
         address 95.92.204.1
         netmask 255.255.255.128
+        up ip route add 95.92.204.0/25 via 95.92.204.1
