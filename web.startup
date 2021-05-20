@@ -1,8 +1,9 @@
 a2enmod ssl
-/etc/init.d/apache2 start
+a2enmod rewrite
 useradd -m admin
 mkdir /home/admin/.ssh
 chown admin:admin /home/admin/.ssh
 cp /shared/authorized_keys /home/admin/.ssh
 chown admin:admin /home/admin/.ssh/authorized_keys
+/etc/init.d/apache2 start
 /etc/init.d/ssh start
