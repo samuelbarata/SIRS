@@ -1,6 +1,11 @@
+/etc/init.d/isc-dhcp-server start
+
 iptables -P INPUT DROP
 iptables -P OUTPUT ACCEPT
 iptables -P FORWARD DROP
+#DHCP
+iptables -t filter -A INPUT -i eth2 -p udp -s 0.0.0.0 --sport 68 -d 255.255.255.255 --dport 67 -j ACCEPT
+iptables -t filter -A INPUT -i eth2 -p udp -s 0.0.0.0 --sport 68 -d 92.95.192.1 --dport 67 -j ACCEPT
 #DNS
 iptables -A FORWARD -p tcp -d 95.92.204.53 --dport 53 -j ACCEPT
 iptables -A FORWARD -p udp -d 95.92.204.53 --dport 53 -j ACCEPT
