@@ -1,0 +1,7 @@
+useradd -m admin
+mkdir /home/admin/.ssh
+chown admin:admin /home/admin/.ssh
+cp /root/id_rs* /home/admin/.ssh/
+chown -R admin:admin /home/admin/.ssh/id_rs*
+chmod 400 /home/admin/.ssh/id_rsa
+chmod 444 /home/admin/.ssh/id_rsa.pub
