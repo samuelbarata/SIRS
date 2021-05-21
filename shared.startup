@@ -1,2 +1,3 @@
 cp /shared/acdc.crt /etc/ssl/certs
 /etc/init.d/networking restart
+[[ ! -f /tmp/ici.tmp ]] || cp /shared/resolv.conf /etc/resolv.conf
