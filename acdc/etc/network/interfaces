@@ -10,26 +10,31 @@ iface lo inet loopback
 #iface eth0 inet dhcp
 
 
+#internet
 iface eth0 inet static
         address 88.60.0.1
         netmask 255.255.240.0
-        up ip route add 88.60.0.0/20 via 88.60.0.1
+        up ip route add default via 88.60.0.1
 
+#scada
 iface eth1 inet static
         address 95.92.200.1
         netmask 255.255.252.0
         up ip route add 95.92.200.0/22 via 95.92.200.1
 
+#corporate
 iface eth2 inet static
         address 95.92.192.1
         netmask 255.255.248.0
         up ip route add 95.92.192.0/21 via 95.92.192.1
 
+#historian
 iface eth3 inet static
         address 95.92.204.129
         netmask 255.255.255.128
         up ip route add 95.92.204.128/25 via 95.92.204.129
 
+#services
 iface eth4 inet static
         address 95.92.204.1
         netmask 255.255.255.128
