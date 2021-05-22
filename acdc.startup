@@ -2,7 +2,8 @@
 
 nft -f /etc/nftables.conf
 
-sed -i '18,$s/^# //' /etc/snort/rules/community.rules
+#enable more rules:
+#sed -i '18,$s/^# //' /etc/snort/rules/community.rules
 
 echo "Attatch to NIDS with screen -r <LAN>NIDS"
 echo "Ctrl+a+d to detatch screen"
