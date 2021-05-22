@@ -1,0 +1,4 @@
+sed -i 's/127.0.0.1/95.92.204.130/g' /etc/mysql/mariadb.conf.d/50-server.cnf
+
+/etc/init.d/mysql start
+source /scripts/populate_db.sh

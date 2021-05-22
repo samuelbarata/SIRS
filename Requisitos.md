@@ -45,6 +45,7 @@ sim
 sim
 
 ### Implementou alguma coisa no PC historian?
+sql server
 
 ### Implementou o MRTG? Funciona?
 
