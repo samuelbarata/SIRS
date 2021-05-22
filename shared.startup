@@ -1,3 +1,6 @@
+echo "alias la='ls -la'" >> ~/.bashrc
+echo "alias showTables='nft list table inet filter'" >>  ~/.bashrc
+
 cp /shared/acdc.crt /etc/ssl/certs
 /etc/init.d/networking restart
 [[ ! -f /tmp/ici.tmp ]] || cp /shared/resolv.conf /etc/resolv.conf
