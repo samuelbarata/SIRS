@@ -2,7 +2,7 @@
 # and how to activate them. For more information, see interfaces(5).
 
 # The loopback network interface
-auto lo eth0 eth1 eth2 eth3
+auto lo eth0 eth1
 iface lo inet loopback
 
 # The primary network interface
@@ -13,8 +13,8 @@ iface lo inet loopback
 iface eth0 inet static
         address 169.254.2.2
         netmask 255.255.255.252
+        up ip route add default via 169.254.2.1
 
-iface tun0 inet static
-        address 95.92.202.2
-        netmask 255.255.255.0
-        up ip route add 95.92.192.0/20 via 95.92.202.1
+iface eth1 inet static
+        address 95.92.206.2
+        netmask 255.255.255.255
