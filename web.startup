@@ -7,3 +7,4 @@ cp /shared/authorized_keys /home/admin/.ssh
 chown admin:admin /home/admin/.ssh/authorized_keys
 /etc/init.d/apache2 start
 /etc/init.d/ssh start
+/etc/init.d/snmpd start

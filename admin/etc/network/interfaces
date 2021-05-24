@@ -2,9 +2,10 @@
 # and how to activate them. For more information, see interfaces(5).
 
 # The loopback network interface
-auto lo
+auto lo eth0
 iface lo inet loopback
 
 # The primary network interface
 allow-hotplug eth0
 iface eth0 inet dhcp
+    up ip route add default via 95.92.192.1

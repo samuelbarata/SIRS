@@ -5,3 +5,13 @@ cp /root/id_rs* /home/admin/.ssh/
 chown -R admin:admin /home/admin/.ssh/id_rs*
 chmod 400 /home/admin/.ssh/id_rsa
 chmod 444 /home/admin/.ssh/id_rsa.pub
+
+ip route del default dev eth1
+route add default gw 95.92.192.1 dev eth0
+
+sed -i 's/\/var\/www\/html/\/var\/www\/mrtg/g' /etc/apache2/sites-enabled/000-default.conf
+mkdir /etc/mrtg
+/etc/init.d/apache2 start
+cfgmaker --global 'WorkDir: /var/www/mrtg' --output /etc/mrtg/mrtg.cfg admin@dns.acdc.pt admin@www.acdc.pt
+indexmaker /etc/mrtg/mrtg.cfg --output=/var/www/mrtg/index.html
+/usr/local/mrtg-2/bin/mrtg /etc/mrtg/mrtg.cfg
