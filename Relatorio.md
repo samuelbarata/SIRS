@@ -4,22 +4,15 @@ Segurança Informática em Redes e Sistemas 2020-2021, segundo semestre
 
 ## Autores
 
-*(todos os comentários sobre o comentário, como este, devem ser **apagados** no documento final)*
-
-*(limite: 1500 palavras)*
-
 **Grupo 2**
 
-*(usar imagens com 150px de altura; com o **rosto enquadrado**)*  
-![Samuel Barata][SamuelPhoto] ![Bob](22222-bob.png) ![Charlie](33333-charlie.png)
-
-*(preencher a tabela abaixo com dados da equipa)*  
+![Samuel Barata][SamuelPhoto] ![Pedro Godinho][PedroPhoto] ![Fabio Sousa][FabioPhoto]
 
 | Número | Nome              | Correio eletrónico                  |
 | -------|-------------------|-------------------------------------|
 | 94230  | Samuel Barata     | [samuel.barata@tecnico.ulisboa.pt](mailto:samuel.barata@tecnico.ulisboa.pt)   |
-| 22222  | Bob Security      | <mailto:bob@tecnico.ulisboa.pt>     |
-| 33333  | Charlie Rules     | <mailto:charlie@tecnico.ulisboa.pt> |
+| 93608  | Pedro Godinho      | [ist193608@tecnico.ulisboa.pt](mailto:bob@tecnico.ulisboa.pt)     |
+| 93577  | Fabio Sousa     | [ist193577@tecnico.ulisboa.pt](mailto:charlie@tecnico.ulisboa.pt) |
 
 ## Introdução
 
@@ -42,9 +35,7 @@ Segurança Informática em Redes e Sistemas 2020-2021, segundo semestre
 
 ## Escolha do IDS
 
-*(identificar e descrever alternativas consideradas)*
-
-*(justificar escolha)*
+Consultamos alguns artigos, mas focamonos principalmente num que tinha comparações dos [melhores NIDS gratuitos](https://www.upguard.com/blog/top-free-network-based-intrusion-detection-systems-ids-for-the-enterprise) que continha uma lista de pros e contras de cada um deles. Escolhemos o Snort porque para alem de termos falado dele na aula tambem estava em primeiro lugar na lista deste website, e também porque é bastante facil de configurar.
 
 
 ## Conclusão
@@ -55,4 +46,6 @@ Segurança Informática em Redes e Sistemas 2020-2021, segundo semestre
 
 *(sugestões para melhorar o projeto em edições futuras)*
 
-[SamuelPhoto]: https://fenix.tecnico.ulisboa.pt/user/photo/ist194230 
+[SamuelPhoto]: https://fenix.tecnico.ulisboa.pt/user/photo/ist194230
+[PedroPhoto]:  https://fenix.tecnico.ulisboa.pt/user/photo/ist193608
+[FabioPhoto]:  https://fenix.tecnico.ulisboa.pt/user/photo/ist193577

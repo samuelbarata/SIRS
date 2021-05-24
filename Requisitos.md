@@ -8,7 +8,7 @@
 internet + 4
 
 ### Quantos switches tem no total?
-1 + 6
+1 + 6 (1/rede)
 
 ### Quantas máquinas tem no total? (quantos contentores do Kathará são criadas quanto faz kathara lstart)
 17
@@ -17,8 +17,10 @@ internet + 4
 3
 
 ### Quantas subredes implementou dentro da ICI (excluindo a Internet)?
+6
 
 ### Quantos routers implementou dentro da ICI (excluindo a Internet)?
+4
 
 ### Implementou o servidor DNS da ICI?
 sim
@@ -38,6 +40,7 @@ sim
 ### Implementou as subredes das suas subestações?
 
 ### Implementou os dois switches dessas subredes?
+sim
 
 ## Serviços
 
@@ -48,6 +51,7 @@ sim
 sql server
 
 ### Implementou o MRTG? Funciona?
+não
 
 ### Quantas páginas web com gráficos está a fornecer o MRTG?
 
@@ -55,6 +59,7 @@ sql server
 sim
 
 ### É possível fazer ssh e scp do PC da Internet para os servidores da LAN de serviços?
+su admin
 ssh dns.acdc.pt
 touch /tmp/tmp.test
 scp /tmp/tmp.test www.acdc.pt:/home/admin/test
@@ -68,13 +73,16 @@ ssh -i /root/id_rsa dns.acdc.pt
 sim
 
 ### Configurou as VPNs usando o pacote OpenVPN? Funcionam?
+sim, não
 
 ### Configurou o netfilter / iptables no router do edifício central?
 sim
 
 ### Esse router bloqueia a maior parte dos acessos da Internet à ICI?
+sim
 
 ### Esse router bloqueia a maior parte dos acessos da DMZ às outras subredes da ICI?
+sim
 
 ### Criou um novo nó para instalar o IDS na rede da DMZ?
 no router principal
@@ -83,14 +91,14 @@ no router principal
 screen -r servicesNIDS
 
 ### Instalou o IDS na subrede corporate?
-sim
+screen -r corporateNIDS
 
 ### Indique o conteúdo do teste usado para testar o IDS
-screen -r corporateNIDS
 ping -b -c 1 95.92.199.255
+screen -r corporateNIDS
 
-screen -r servicesNIDS
 ping -b -c 1 95.92.204.127
+screen -r servicesNIDS
 
 ### Configurou DHCP? Funciona?
 
@@ -98,3 +106,4 @@ ping -b -c 1 95.92.204.127
 sim, curl -k https://www.acdc.pt/index.html
 
 ### Configurou DNSSEC? Funciona?
+não
