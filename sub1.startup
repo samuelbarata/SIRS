@@ -1,6 +1,8 @@
 mkdir -p /dev/net
 mknod /dev/net/tun c 10 200
 chmod 600 /dev/net/tun
-nft -f /etc/nftables.conf
+#TODO:
+#nft -f /etc/nftables.conf
 /etc/init.d/networking restart
+/etc/init.d/isc-dhcp-server start
 screen -dmS vpn openvpn /root/client.conf

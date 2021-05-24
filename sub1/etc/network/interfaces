@@ -16,5 +16,5 @@ iface eth0 inet static
 
 
 iface eth1 inet static
-        address 95.92.206.1
-        netmask 255.255.255.255
+        address 95.92.201.1
+        netmask 255.255.255.0
