@@ -5,9 +5,6 @@ nft -f /etc/nftables.conf
 #enable more rules:
 #sed -i '18,$s/^# //' /etc/snort/rules/community.rules
 
-echo "Attatch to NIDS with screen -r <LAN>NIDS"
-echo "Ctrl+a+d to detatch screen"
-
 #https://www.geeksforgeeks.org/screen-command-in-linux-with-examples/
-screen -dmS corporateNIDS snort -A console -i eth2 -u snort -g snort -c /etc/snort/snort.conf
-screen -dmS servicesNIDS  snort -A console -i eth4 -u snort -g snort -c /etc/snort/snort.conf
+screen -dmL -Logfile /var/log/corporateNIDS -S corporateNIDS snort -A console -i eth2 -u snort -g snort -c /etc/snort/snort.conf
+screen -dmL -Logfile /var/log/servicesNIDS -S servicesNIDS snort -A console -i eth4 -u snort -g snort -c /etc/snort/snort.conf

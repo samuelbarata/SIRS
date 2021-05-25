@@ -1,0 +1,19 @@
+
+>----- Testing Sample Snort Rules: -----
+>Broadcast in corporate should trigger a snort rule
+-admin
+ping -bc 1 95.92.199.255 &> /dev/null
+!
+
+-acdc
+tail -n 1 /var/log/corporateNIDS | grep -q 'ICMP corporate test' && echo 1: Success! || echo 1: Failure!
+!
+
+>Broadcast in services should trigger a snort rule
+-web
+ping -bc 1 95.92.204.127 &> /dev/null
+!
+
+-acdc
+tail -n 1 /var/log/servicesNIDS | grep -q 'ICMP services test' && echo 1: Success! || echo 1: Failure!
+!

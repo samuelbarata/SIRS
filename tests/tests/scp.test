@@ -2,7 +2,7 @@
 >----- SCP to Web -----
 -admin
 touch testfile
-su admin -c 'scp -o StrictHostKeyChecking=no testfile admin@95.92.204.80:~/testfile' >> /dev/null
+su admin -c 'scp -o StrictHostKeyChecking=no testfile admin@95.92.204.80:~/testfile' &> /dev/null
 rm testfile
 !
 
@@ -14,7 +14,7 @@ rm /home/admin/testfile >> /dev/null
 >----- SCP to DNS -----
 -admin
 touch testfile
-su admin -c 'scp -o StrictHostKeyChecking=no testfile admin@95.92.204.53:~/testfile' >> /dev/null
+su admin -c 'scp -o StrictHostKeyChecking=no testfile admin@95.92.204.53:~/testfile' &> /dev/null
 rm testfile
 !
 

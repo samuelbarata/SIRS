@@ -1,5 +1,13 @@
 #!/bin/bash
 
+YELLOW='\033[1;33m'
+LIGHTRED='\033[0;31m'
+LIGHTCYAN='\033[1;36m'
+LIGHTGREEN='\033[1;32m'
+LIGHTBLUE='\033[1;34m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
 
 usage() {
     echo 'This script recieves a test file or directory with test files and executes them.'
@@ -9,6 +17,7 @@ usage() {
     echo "$0 labdir testdir -- run all tests in a directory"
 }
 
+
 # Recieves a test file and executes it
 # Test file syntax:
 # A line starting with a hash ("#") defines a comment and is ignored
@@ -17,7 +26,9 @@ usage() {
 # A line starting with a bang ("!") reads the command queue and execs them on the last defined machind.
 # A line that doesn't start with any of those symbols defines a command that will be queued to run
 test_file() {
+    echo -ne $YELLOW
     echo "Running test file $1"
+    echo -ne $NC
     echo
 
     machine=pc_int
@@ -29,22 +40,53 @@ test_file() {
         elif [[ $line == \>* ]]; then
             echo "${line:1}"
         elif [[ $line == \!* ]]; then
+            echo -ne $LIGHTBLUE
             echo "Machine: $machine"
+            echo -ne $NC
+
             commands=${commands:1}
+
+            echo -ne $CYAN
             while IFS= read -r com; do
                 echo ">> $com"
             done <<< "$commands"
+            echo -ne $NC
+
             commands=$(tr '\n' ';' <<< $commands)
             result=$(eval "kathara exec -d $2 $machine -- bash -c \"$commands\"")
-            while IFS= read -r r; do
-                echo "<< $r"
-            done <<< $result
+            if [[ ! -z $result ]]; then
+                while IFS= read -r r; do
+                    parse_output "$r"
+                done <<< $result
+            fi
             echo
             commands=""
         elif [[ ! -z $line ]] && [[ ! $line == \#* ]]; then
             printf -v commands "$commands\n$line"
         fi
     done < $1
+}
+
+parse_output() {
+    output=$1
+    if echo $output | grep -qi 'success'; then
+        if echo $output | grep -qi 'unintended'; then
+            echo -ne $LIGHTRED
+        else
+            echo -ne $LIGHTGREEN
+        fi
+    elif echo $output | grep -qi 'failure'; then
+        if echo $output | grep -qi 'intended' && echo $output | grep -qiv 'unintended'; then
+            echo -ne $LIGHTGREEN
+        else
+            echo -ne $LIGHTRED
+        fi
+    else 
+        echo -ne $LIGHTCYAN
+    fi
+    echo "<< $output"
+    echo -ne $NC
+
 }
 
 if [ "$#" -ne 2 ]; then
