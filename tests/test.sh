@@ -1,11 +1,19 @@
 #!/bin/bash
 
+
 usage() {
+    echo 'This script recieves a test file or directory with test files and executes them.'
+    echo 'Additionally, this script needs to recieve the directory in which lab.conf exists. This is needed for kathara exec to find the machine to run the test on.'
     echo 'Usage:'
     echo "$0 labdir testfile.sh -- run a test"
-    echo "$0 labdir testdir -- run all tests in a dir"
+    echo "$0 labdir testdir -- run all tests in a directory"
 }
 
+# Recieves a test file and executes it
+# Test file syntax:
+# A line starting with a hash ("#") defines a comment and is ignored
+# A line starting with a dash ("-") defines which machine the following commands will be executed
+# Any other line will be executed as a command in the last machine defined by a dash line
 test_file() {
     echo "Running test file $1"
 
@@ -28,20 +36,25 @@ if [ "$#" -ne 2 ]; then
     exit
 fi
 
+# We need to move to lab dir to execute kathara commands. Because of this we need absolute paths to the test files.
 lab_dir="$(pwd)"/$1
 test_f="$(pwd)"/$2
 cd $lab_dir
 
+# Make sure lab_dir is a directory, otherwise print usage and leave
 if [[ ! -d $lab_dir ]]; then
     echo "$lab_dir not a directory!"
     usage
     exit
+# If test_f is a directory, call test_file function with each file in the directory
 elif [[ -d $test_f ]]; then
     for f in $test_f/*; do
         test_file $f
     done
+# If test_f is a file, call test_file with it
 elif [[ -f $test_f ]]; then
     test_file $test_f
+# If test_f is neither file nor directory is doesn't exist, print usage and leave
 else
     echo "$test_f is not a file or directory."
     usage
