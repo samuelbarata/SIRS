@@ -29,11 +29,14 @@ test_file() {
         elif [[ $line == \>* ]]; then
             echo "${line:1}"
         elif [[ $line == \!* ]]; then
-            echo "$machine#${commands:3}"
-            eval "kathara exec $machine -- bash -c '${commands:3}'"
+            echo "Machine: $machine"
+            commands=${commands:1}
+            echo "$commands"
+            commands=$(tr '\n' ';' <<< $commands)
+            eval "kathara exec $machine -- bash -c '$commands'"
             echo
         elif [[ ! -z $line ]] && [[ ! $line == \#* ]]; then
-            commands+=" ; $line"
+            printf -v commands "$commands\n$line"
         fi
     done < $1
 }
