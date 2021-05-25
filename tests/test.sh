@@ -18,6 +18,7 @@ usage() {
 # A line that doesn't start with any of those symbols defines a command that will be queued to run
 test_file() {
     echo "Running test file $1"
+    echo
 
     machine=pc_int
     commands=""
@@ -34,7 +35,7 @@ test_file() {
                 echo ">> $com"
             done <<< "$commands"
             commands=$(tr '\n' ';' <<< $commands)
-            result=$(eval "kathara exec $machine -- bash -c \"$commands\"")
+            result=$(eval "kathara exec -d $2 $machine -- bash -c \"$commands\"")
             while IFS= read -r r; do
                 echo "<< $r"
             done <<< $result
@@ -51,10 +52,8 @@ if [ "$#" -ne 2 ]; then
     exit
 fi
 
-# We need to move to lab dir to execute kathara commands. Because of this we need absolute paths to the test files.
 lab_dir=`realpath $1`
 test_f=`realpath $2`
-cd $lab_dir
 
 # Make sure lab_dir is a directory, otherwise print usage and leave
 if [[ ! -d $lab_dir ]]; then
@@ -64,12 +63,12 @@ if [[ ! -d $lab_dir ]]; then
 # If test_f is a directory, call test_file function with each file in the directory
 elif [[ -d $test_f ]]; then
     for f in $test_f/*; do
-        test_file $f
+        test_file $f $lab_dir
         echo $'\n'
     done
 # If test_f is a file, call test_file with it
 elif [[ -f $test_f ]]; then
-    test_file $test_f
+    test_file $test_f $lab_dir
 # If test_f is neither file nor directory is doesn't exist, print usage and leave
 else
     echo "$test_f is not a file or directory."
