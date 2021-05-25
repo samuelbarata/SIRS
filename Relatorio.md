@@ -11,12 +11,12 @@ Segurança Informática em Redes e Sistemas 2020-2021, segundo semestre
 | Número | Nome              | Correio eletrónico                  |
 | -------|-------------------|-------------------------------------|
 | 94230  | Samuel Barata     | [samuel.barata@tecnico.ulisboa.pt](mailto:samuel.barata@tecnico.ulisboa.pt)   |
-| 93608  | Pedro Godinho      | [ist193608@tecnico.ulisboa.pt](mailto:bob@tecnico.ulisboa.pt)     |
-| 93577  | Fabio Sousa     | [ist193577@tecnico.ulisboa.pt](mailto:charlie@tecnico.ulisboa.pt) |
+| 93608  | Pedro Godinho      | [pedro.f.godinho@tecnico.ulisboa.pt](mailto:pedro.f.godinho@tecnico.ulisboa.pt)     |
+| 93577  | Fabio Sousa     | [fabio.sousa@tecnico.ulisboa.pt](mailto:fabio.sousa@tecnico.ulisboa.pt) |
 
 ## Introdução
 
-*(escrever descrição sumária, assumindo que o leitor já leu o enunciado)*
+Neste projeto tenciona-se simular uma infrastrutura crítica de informação constituída por um edifício central e duas subestações elétricas. Na rede do edifício central encontram-se dois serviços numa DMZ (um web server e um servidos DNS), bem como um serviço de bases de dados (data historian), uma rede corporate com 3 pcs (2 hosts e um admin) e uma rede SCADA. Adicionalmente, simula-se uma internet simples através de um único router, ao qual estão ligadas as duas subestações, o edifício central, um pc, e 2 servidores de dns, para os domínios root e .pt.
 
 ## Diagrama de rede
 
@@ -35,7 +35,7 @@ Segurança Informática em Redes e Sistemas 2020-2021, segundo semestre
 
 ## Escolha do IDS
 
-Consultamos alguns artigos, mas focamonos principalmente num que tinha comparações dos [melhores NIDS gratuitos](https://www.upguard.com/blog/top-free-network-based-intrusion-detection-systems-ids-for-the-enterprise) que continha uma lista de pros e contras de cada um deles. Escolhemos o Snort porque para alem de termos falado dele na aula tambem estava em primeiro lugar na lista deste website, e também porque é bastante facil de configurar.
+Consultamos alguns artigos, mas focamo-nos principalmente num que tinha comparações dos [melhores NIDS gratuitos](https://www.upguard.com/blog/top-free-network-based-intrusion-detection-systems-ids-for-the-enterprise) que continha uma lista de pros e contras de cada um deles. Escolhemos o Snort porque, para alem de termos falado dele na aula, também estava em primeiro lugar na lista deste website. Além disso, é também bastante facil de configurar.
 
 
 ## Conclusão
