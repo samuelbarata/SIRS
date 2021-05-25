@@ -1,0 +1,4 @@
+-vpn
+# This is a comment
+ping -c 2 92.95.201.1
+
