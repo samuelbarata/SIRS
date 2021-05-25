@@ -34,7 +34,10 @@ test_file() {
                 echo ">> $com"
             done <<< "$commands"
             commands=$(tr '\n' ';' <<< $commands)
-            eval "kathara exec $machine -- bash -c \"$commands\""
+            result=$(eval "kathara exec $machine -- bash -c \"$commands\"")
+            while IFS= read -r r; do
+                echo "<< $r"
+            done <<< $result
             echo
             commands=""
         elif [[ ! -z $line ]] && [[ ! $line == \#* ]]; then
