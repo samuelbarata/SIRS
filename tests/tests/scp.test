@@ -22,3 +22,15 @@ rm testfile
 [ -f "/home/admin/testfile" ] && echo 2: Success || echo 2: Failure
 rm /home/admin/testfile >> /dev/null
 !
+
+>----- SCP from Internet -----
+-pc_int
+touch testfile
+su admin -c 'scp -o StrictHostKeyChecking=no testfile admin@95.92.204.53:~/testfile' &> /dev/null
+rm testfile
+!
+
+-dns_acdc
+[ -f "/home/admin/testfile" ] && echo 2: Success || echo 2: Failure
+rm /home/admin/testfile >> /dev/null
+!
