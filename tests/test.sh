@@ -13,20 +13,27 @@ usage() {
 # Test file syntax:
 # A line starting with a hash ("#") defines a comment and is ignored
 # A line starting with a dash ("-") defines which machine the following commands will be executed
-# Any other line will be executed as a command in the last machine defined by a dash line
+# A line starting with an arrow (">") defines a string to be written to the (host) terminal by the test script
+# A line starting with a bang ("!") reads the command queue and execs them on the last defined machind.
+# A line that doesn't start with any of those symbols defines a command that will be queued to run
 test_file() {
     echo "Running test file $1"
 
     machine=pc_int
+    commands=""
 
     while read line ; do
         if [[ $line == -* ]]; then
             machine="${line:1}"
             echo "Now executing commands on machine $machine"
-        elif [[ ! -z $line ]] && [[ ! $line == \#* ]]; then
-            echo "$machine# $line"
-            kathara exec $machine -- $line
+        elif [[ $line == \>* ]]; then
+            echo "${line:1}"
+        elif [[ $line == \!* ]]; then
+            echo "$machine#${commands:3}"
+            eval "kathara exec $machine -- bash -c '${commands:3}'"
             echo
+        elif [[ ! -z $line ]] && [[ ! $line == \#* ]]; then
+            commands+=" ; $line"
         fi
     done < $1
 }
