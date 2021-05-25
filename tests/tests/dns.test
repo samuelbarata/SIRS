@@ -1,0 +1,6 @@
+-pc_int
+
+>----- Trying to resolve addresses -----
+nslookup www.acdc.pt > /dev/null && echo 1: Success || echo 1: Failure
+nslookup historian.acdc.pt > /dev/null && echo 2: Success || echo 2: Failure
+!

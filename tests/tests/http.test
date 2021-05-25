@@ -1,0 +1,10 @@
+
+>----- HTTP test from Admin -----
+-admin
+curl -s 95.92.204.80 > /dev/null && echo 1: Success || echo 1: Failure
+!
+
+>----- HTTP test from Internet PC -----
+-pc_int
+curl -s www.acdc.pt > /dev/null && echo 2: Success || echo 2: Failure 
+!

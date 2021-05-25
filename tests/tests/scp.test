@@ -1,0 +1,24 @@
+
+>----- SCP to Web -----
+-admin
+touch testfile
+su admin -c 'scp -o StrictHostKeyChecking=no testfile admin@95.92.204.80:~/testfile' >> /dev/null
+rm testfile
+!
+
+-web
+[ -f "/home/admin/testfile" ] && echo 1: Success || echo 1: Failure
+rm /home/admin/testfile >> /dev/null
+!
+
+>----- SCP to DNS -----
+-admin
+touch testfile
+su admin -c 'scp -o StrictHostKeyChecking=no testfile admin@95.92.204.53:~/testfile' >> /dev/null
+rm testfile
+!
+
+-dns_acdc
+[ -f "/home/admin/testfile" ] && echo 2: Success || echo 2: Failure
+rm /home/admin/testfile >> /dev/null
+!

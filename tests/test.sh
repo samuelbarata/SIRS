@@ -34,8 +34,9 @@ test_file() {
                 echo ">> $com"
             done <<< "$commands"
             commands=$(tr '\n' ';' <<< $commands)
-            eval "kathara exec $machine -- bash -c '$commands'"
+            eval "kathara exec $machine -- bash -c \"$commands\""
             echo
+            commands=""
         elif [[ ! -z $line ]] && [[ ! $line == \#* ]]; then
             printf -v commands "$commands\n$line"
         fi
