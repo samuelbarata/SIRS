@@ -1,9 +1,0 @@
--pc_int
-
->----- Pinging internet addresses -----
-ping -c 2 88.60.0.54
-ping -c 2 88.60.0.53
-ping -c 2 95.92.201.1
-ping -c 2 95.92.202.1
-!
-

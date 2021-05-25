@@ -25,7 +25,6 @@ test_file() {
     while read line ; do
         if [[ $line == -* ]]; then
             machine="${line:1}"
-            echo "Now executing commands on machine $machine"
         elif [[ $line == \>* ]]; then
             echo "${line:1}"
         elif [[ $line == \!* ]]; then
@@ -62,6 +61,7 @@ if [[ ! -d $lab_dir ]]; then
 elif [[ -d $test_f ]]; then
     for f in $test_f/*; do
         test_file $f
+        echo $'\n'
     done
 # If test_f is a file, call test_file with it
 elif [[ -f $test_f ]]; then
