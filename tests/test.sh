@@ -31,7 +31,9 @@ test_file() {
         elif [[ $line == \!* ]]; then
             echo "Machine: $machine"
             commands=${commands:1}
-            echo "$commands"
+            while IFS= read -r com; do
+                echo ">> $com"
+            done <<< "$commands"
             commands=$(tr '\n' ';' <<< $commands)
             eval "kathara exec $machine -- bash -c '$commands'"
             echo
