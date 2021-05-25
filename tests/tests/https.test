@@ -1,4 +1,5 @@
 
 >----- Https Test From Admin -----
--admin
-# TODO
+-pc_int
+curl -s --cacert /etc/ssl/certs/acdc.crt --ssl-reqd https://www.acdc.pt/ > /dev/null && echo 1: Success! || echo 1: Failure!
+!

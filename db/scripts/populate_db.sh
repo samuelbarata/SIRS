@@ -8,3 +8,7 @@ mysql -u root -e "CREATE DATABASE scada;"
 
 mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'root' IDENTIFIED BY 'password';"
 mysql -u root -ppassword -e "SELECT 1;"
+mysql -u root -ppassword -D scada -e "CREATE TABLE candeeiros (firstname VARCHAR(30) NOT NULL, lastname VARCHAR(30) NOT NULL)"
+mysql -u root -ppassword -D scada -e "INSERT INTO candeeiros (firstname, lastname) VALUES ('Fábio', 'Sousa')"
+mysql -u root -ppassword -D scada -e "INSERT INTO candeeiros (firstname, lastname) VALUES ('Pedro', 'Godinho')"
+mysql -u root -ppassword -D scada -e "INSERT INTO candeeiros (firstname, lastname) VALUES ('Samuel', 'Barata')"
