@@ -48,8 +48,8 @@ if [ "$#" -ne 2 ]; then
 fi
 
 # We need to move to lab dir to execute kathara commands. Because of this we need absolute paths to the test files.
-lab_dir="$(pwd)"/$1
-test_f="$(pwd)"/$2
+lab_dir=`realpath $1`
+test_f=`realpath $2`
 cd $lab_dir
 
 # Make sure lab_dir is a directory, otherwise print usage and leave
