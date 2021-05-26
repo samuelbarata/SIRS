@@ -34,18 +34,21 @@ test_file() {
     machine=pc_int
     commands=""
 
+    # Read the test file line by line
     while read line ; do
-        if [[ $line == -* ]]; then
+        if [[ $line == -* ]]; then      # Machine definitions
             machine="${line:1}"
-        elif [[ $line == \>* ]]; then
+        elif [[ $line == \>* ]]; then   # Print definitions
             echo "${line:1}"
-        elif [[ $line == \!* ]]; then
+        elif [[ $line == \!* ]]; then   # Execute definitions
+            # Print machine in light blue
             echo -ne $LIGHTBLUE
             echo "Machine: $machine"
             echo -ne $NC
 
             commands=${commands:1}
 
+            # Print comamnds to execute in cyan
             echo -ne $CYAN
             while IFS= read -r com; do
                 echo ">> $com"
@@ -53,20 +56,25 @@ test_file() {
             echo -ne $NC
 
             commands=$(tr '\n' ';' <<< $commands)
+
+            # Execute commandsin kathara, save result in result variable
             result=$(eval "kathara exec -d $2 $machine -- bash -c \"$commands\"")
             if [[ ! -z $result ]]; then
+                # Parse each line of the output
                 while IFS= read -r r; do
                     parse_output "$r"
                 done <<< $result
             fi
             echo
             commands=""
-        elif [[ ! -z $line ]] && [[ ! $line == \#* ]]; then
+        elif [[ ! -z $line ]] && [[ ! $line == \#* ]]; then # Command Lines
             printf -v commands "$commands\n$line"
         fi
     done < $1
 }
 
+
+# Very ugly function
 parse_output() {
     output=$1
     if echo $output | grep -qi 'success'; then
@@ -88,6 +96,9 @@ parse_output() {
     echo -ne $NC
 
 }
+
+
+##### Script Start #####
 
 if [ "$#" -ne 2 ]; then
     usage
