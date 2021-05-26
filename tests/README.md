@@ -23,7 +23,7 @@ Os ficheiros de teste (`*.test`) são parsed pelo script `test.sh` da seguinte f
   - Linhas que não comecem por nenhum desses símbolos definem um comando a ser adicionado à queue de comandos
 
 Exemplo:
-```
+```bash
 >This is an example of test sintax
 
 # We define which machine we execute commands on
