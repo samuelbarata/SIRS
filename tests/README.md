@@ -4,7 +4,7 @@ Neste diretório encontra-se um script bash `test.sh`. Este script recebe como a
 
 Exemplos de execução de testes (assumindo que o diretório atual é o diretório com o script `test.sh`):
 
-```
+```bash
 # Execute all tests
 ./test.sh ../ ./tests
 
@@ -25,8 +25,10 @@ Os ficheiros de teste (`*.test`) são parsed pelo script `test.sh` da seguinte f
 Exemplo:
 ```
 >This is an example of test sintax
+
 # We define which machine we execute commands on
 -pc_int
+
 # We define commands to execute
 echo Hello, World!
 
