@@ -30,15 +30,15 @@ Exemplo:
 -pc_int
 
 # We define commands to execute
-echo Hello, World!
+echo 'Hello, World!'
 
 # This sintax is useful for testing: if the ping (or whichever command is used) succeeds, we get the success message, otherwise we get the failure message.
 # The test script highlights messages with success or failure in the text
-ping -c 2 localhost && echo Success! || echo Failure!
+ping -c 2 localhost && echo 'Success!' || echo 'Failure!'
 
 # Should not be possible to ping this ip.
 # Script correcly highlights success as red and failure as green by parsing the words intended and unintended
-ping -c 2 1.2.3.4 && echo Success (unintended) || echo Failure (intended)
+ping -c 2 1.2.3.4 && echo 'Success (unintended)' || echo 'Failure (intended)'
 
 # Finally, we send the commands to the machine
 !
