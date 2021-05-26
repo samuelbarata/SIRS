@@ -16,10 +16,8 @@ ping -c 1 88.60.0.54 >> /dev/null && echo '1: Success! (unintended)' || echo '1:
 -pc_int
 ping -c 2 88.60.0.54 >> /dev/null && echo 1: Success! || echo 1: Failure!
 ping -c 2 88.60.0.53 >> /dev/null && echo 2: Success! || echo 2: Failure!
-ping -c 2 95.92.201.1 >> /dev/null && echo 3: Success! || echo 3: Failure!
-ping -c 2 95.92.202.1 >> /dev/null && echo 4: Success! || echo 4: Failure!
-ping -c 2 95.92.204.80 >> /dev/null && echo 5: Success! || echo 5: Failure!
-ping -c 2 95.92.204.53 >> /dev/null && echo 6: Success! || echo 6: Failure!
+ping -c 2 95.92.204.80 >> /dev/null && echo 3: Success! || echo 3: Failure!
+ping -c 2 95.92.204.53 >> /dev/null && echo 4: Success! || echo 4: Failure!
 !
 
 >----- Pinging ACDC router from inside network -----

@@ -15,7 +15,6 @@ iface eth0 inet static
         address 169.254.0.2
         netmask 255.255.255.252
         up ip route add default via 169.254.0.1
-        up ip route add 95.92.201.0/24 via 169.254.0.1
 
 #scada
 iface eth1 inet static

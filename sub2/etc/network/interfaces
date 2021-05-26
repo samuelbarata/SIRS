@@ -16,5 +16,5 @@ iface eth0 inet static
         up ip route add default via 169.254.2.1
 
 iface eth1 inet static
-        address 95.92.202.1
+        address 95.92.205.1
         netmask 255.255.255.0

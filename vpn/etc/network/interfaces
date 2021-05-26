@@ -14,4 +14,4 @@ iface eth0 inet static
         address 95.92.200.2
         netmask 255.255.252.0
         gateway 95.92.200.1
-        up ip route add 95.92.201.0/24 via 95.92.200.1
+        up ip route add default via 95.92.200.1
