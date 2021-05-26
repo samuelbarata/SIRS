@@ -27,11 +27,40 @@ Neste projeto tenciona-se simular uma infrastrutura crítica de informação con
 
 ### Decisões de implementação da rede
 
-#### ...
+#### Internet
+- Apenas um router ligado aos edificios com interfaces link-local
+- ligado a um switch de internet onde estão os 2 servidores de DNS e PC
+#### Edifício Central
+- Apenas implementamos um router com 4 redes
+    - Poderiamos ter implementado com 4 VLANs mas achamos que estava fora dos objetivos do projeto
+- um switch em cada LAN para ligar todos os dispositivos la presentes
+- os IDSs foram colocados nas saidas do router principal dado que os ataques que entrariam na rede viriam dessa interface
+#### SubEstações
+- Apenas um router ligado a um switch com a LAN dessa subestação
+- o router redireciona o trafego com destino à LAN scada para a VPN
 
 ### Decisões de implementação dos serviços
 
-#### ...
+#### SSH
+- utilizador admin adicionado em todos os pcs
+    - no da internet e no do admin tem um home directory com as suas chaves ssh
+    - nos pcs dos engenheiros tem uma chave duplicada no root directory tem a chave ssh
+- nos servidores não permissão de login com password
+#### VPNs
+- utilizar uma interface TAP para passar uma rede
+- VPN é subrede da rede scada
+- apenas implementar a vpn nos routers das subestações de modo a não ser preciso criar mais clientes de cada subestação tivesse mais computadores na LAN
+#### Firewalls
+- decidimos usar nftables porque para alem das regras serem mais legiveis, já tinhamos experiencia passada com ela
+- decidimos limitar os pings da internet a 2/sec de modo a prevenir ataques DOS
+- todos os ips e interfaces estão defenidos em variaveis para mais facilmente modificação de regras no futuro
+- para além das regras explicitas no enunciado, permitimos tambem que a estação ScadaCentral acedesse à base de dados
+#### HTTPS
+- Não decidimos nada
+#### IDS
+- Implemntado no router principal a escutar as ligações de saida para as redes monitorizadas (corporate, services)
+#### DHCP
+- Implementamos DHCP na rede Corporate, nas subestações e na LAN scada
 
 ## Escolha do IDS
 

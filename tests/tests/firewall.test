@@ -32,7 +32,7 @@ nslookup www.acdc.pt > /dev/null && echo '1: Success (unintended)' || echo '2: F
 
 >----- Corportate should be able to access SCADA and Internet -----
 -corp_host01
-ping -c 2 95.92.200.100 > /dev/null && echo 1: Success || echo 1: Failure
+ping -c 2 95.92.200.3 > /dev/null && echo 1: Success || echo 1: Failure
 ping -c 2 95.92.201.1 > /dev/null && echo 2: Success || echo 2: Failure
 !
 
