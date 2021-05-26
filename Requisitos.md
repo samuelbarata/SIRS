@@ -80,7 +80,7 @@ ssh -i /root/id_rsa dns.acdc.pt
 sim
 
 ### Configurou as VPNs usando o pacote OpenVPN? Funcionam?
-sim, não
+sim, a ligação é estabelicida mas não é possivel enviar pacotes, dado que quando fazem um ARP request com o ip do servidor não recebem um MAC address como resposta. 
 
 ### Configurou o netfilter / iptables no router do edifício central?
 sim
