@@ -69,11 +69,12 @@ Consultamos alguns artigos, mas focamo-nos principalmente num que tinha compara�
 
 ## Conclusão
 
-*(o que foi alcançado)*
+Fizemos tudo o que era pedido, apenas não conseguimos acabar a VPN
 
-*(pontos fortes, pontos a melhorar)*
+Experiencias passadas facilitaram bastante algumas tarefas, como por exemplo o SSH
+No entanto tarefas como HTTPS, em que nunca mexemos, foram mais difíceis. Sentimos que tivemos pouca preparação para a VPN.
 
-*(sugestões para melhorar o projeto em edições futuras)*
+Sugerimos deixar as tarfas mais complexas com uma melhor explicação. Sugerimos também ao dar feedback das redes que nós planeamos explicar também algumas das implicações das nossas decisões, pois apesar de poder estar tudo correto podemos mais tarde vir a ter de mudar certas ideas de modo a completar outras tarefas.
 
 [SamuelPhoto]: https://fenix.tecnico.ulisboa.pt/user/photo/ist194230
 [PedroPhoto]:  https://fenix.tecnico.ulisboa.pt/user/photo/ist193608
